@@ -1,0 +1,75 @@
+{
+    "name": "nathandaly/carbonite",
+    "description": "An age calculation library based on Carbon.",
+    "keywords": [
+        "date",
+        "time",
+        "DateTime",
+        "Age",
+        "Date of Birth",
+        "Age Calculation",
+        "Age Calculator",
+        "Calculator"
+    ],
+    "support": {
+        "issues": "https://github.com/nathandaly/Carbonite/issues",
+        "source": "https://github.com/nathandaly/Carbonite"
+    },
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nathan Daly",
+            "email": "justlikephp@gmail.com"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "bin": ["bin/carbonite"],
+    "require-dev": {
+        "nunomaduro/collision": "^5.0",
+        "pestphp/pest": "^0.3.13",
+        "phpstan/extension-installer": "^1.0",
+        "phpunit/phpunit": "^9.3.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Carbonite\\": "src/Carbonite/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": [
+            "@pest"
+        ],
+        "pest": "./vendor/bin/pest --verbose"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Carbonite\\Laravel\\ServiceProvider"
+            ]
+        },
+        "phpstan": {
+            "includes": [
+                "extension.neon"
+            ]
+        }
+    },
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "nesbot/carbon": "^2.41",
+        "ext-calendar": "*"
+    }
+}
